@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <meta name="description" content="Valentines for Computer Science nerds">
+        <title>CS Valentine Generator</title>
+        <link rel="stylesheet" href="./CSS/style.css">
+    </head>
+
+    <body>
+        <section id="navigation">
+            <div class="center">
+                <div class="container">
+                    <nav>
+                        <ul>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="generate.html">Generate A Card</a></li>
+                            <li><a href="index.html">See All Valentines</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>          
+        </section>
+
+        <script>
+        var slideIndex = 1;
+
+        // Next/previous controls
+        function generateCard() {
+          var min = 1;
+          var max = 10;
+          var random = Math.floor(Math.random() * (max - min) +min + 1);
+          currentSlide(random);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+          document.getElementById("link").innerHTML = "Email this link to send your CS Valentine: " + window.location.href;
+        }
+
+        function showSlides(n) {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          if (n > slides.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          slides[slideIndex-1].style.display = "block";
+        }
+        </script>
+
+        <!-- Container for the image gallery -->
+        <div class="imagegallery">
+
+          <!-- Full-width images with number text -->
+          <div class="mySlides">
+              <img src="./Images/CSValentine1.png" style="width:100%">
+          </div>
+          <div class="mySlides">
+              <img src="./Images/CSValentine2.png" style="width:100%">
+          </div>
+          <div class="mySlides">
+              <img src="./Images/CSValentine3.png" style="width:100%">
+          </div>
+          <div class="mySlides">
+              <img src="./Images/CSValentine4.png" style="width:100%">
+          </div>
+          <div class="mySlides">
+              <img src="./Images/CSValentine5.png" style="width:100%">
+          </div>
+          <div class="mySlides">
+              <img src="./Images/CSValentine6.png" style="width:100%">
+          </div>
+           <div class="mySlides">
+              <img src="./Images/CSValentine7.png" style="width:100%">
+          </div>
+           <div class="mySlides">
+              <img src="./Images/CSValentine8.png" style="width:100%">
+          </div>
+           <div class="mySlides">
+              <img src="./Images/CSValentine10.png" style="width:100%">
+          </div>
+           <div class="mySlides">
+              <img src="./Images/CSValentine11.png" style="width:100%">
+          </div>
+
+        </div>
+
+        <button id = "generateButton" onclick="generateCard()">Generate A New Card!</button>
+        <p id = "link" ></p>
+        <footer>
+            <p>Computer Science Valentines</p>
+        </footer>
+
+        
+    </body>
+</html>
